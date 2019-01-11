@@ -19,6 +19,7 @@ for(i in c(18:27, 30:41, 44:55))
     html() %>%
     html_nodes("table")
   
+  # If there are no problems with rows spanning multiple columns, continue:
   if(length(grep("colspan", main1 %>% as.character())) == 0)
   {
     results <- main1 %>% html_table() %>%
@@ -27,6 +28,8 @@ for(i in c(18:27, 30:41, 44:55))
     datalist[[count]] <- results    
   }
   
+  # If there are problems with rows spanning multiple columns,
+  # generate notification message and skip
   if(length(grep("colspan", main1 %>% as.character())) == 1)
   {
     print(paste("Could not get data from", html("https://www.nrcan.gc.ca/energy/oil-sands/18087#cop") %>%
