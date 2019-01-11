@@ -1,5 +1,6 @@
-Rough but working R code used to scrape data from Environment Canada website re: crude oil pricing and generate a single csv.
-I'm new to this - feedback and tips are appreciated!
+This was a quick side project in response to a tweet from Natural Resources Canada that said they weren't able to generate a excel spreadsheet containing daily oil prices that are available on their website in response to another Twitter user asking for the data. I hope this helps at least a little bit. If not... trying to learn more about how web scraping works so this was a fun task!
+
+This repository contains rough but working R code used to scrape data from Environment Canada website re: crude oil pricing and generate a single csv. It requires the libraries `dplyr` and `rvest`. I'm VERY new to this - feedback and tips are appreciated!
 
 Limitations:  
 - need to manually specify which unordered list elements to pull out of main page to generate vector of websites containing daily crude oil prices.  
