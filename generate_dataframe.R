@@ -22,7 +22,8 @@ for(i in c(18:27, 30:41, 44:55))
   # If there are no problems with rows spanning multiple columns, continue:
   if(length(grep("colspan", main1 %>% as.character())) == 0)
   {
-    results <- main1 %>% html_table() %>%
+    results <- main1 %>%
+      html_table() %>%
       data.frame()
     names(results) <- gsub("([^A-Za-z0-9 ])+", ".", names(results))
     datalist[[count]] <- results    
